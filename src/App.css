@@ -1,38 +1,136 @@
-.App {
+/* App.css */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80")
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+.app {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.9); /* translucent white */
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
   text-align: center;
+  color: #333;
+  text-shadow: 1px 1px 3px #eee;
+  margin-bottom: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  text-align: center;
+  color: #555;
+  font-size: 15px;
+  margin-top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-list {
+  margin-bottom: 20px;
+}
+
+.todo-item {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   color: white;
+  animation: fadeIn 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-item.high {
+  background: linear-gradient(135deg, #f54ea2 0%, #ff7676 100%);
+  border: 1px solid #ff5252;
 }
 
-@keyframes App-logo-spin {
+.todo-item.medium {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  border: 1px solid #f9a825;
+  color: #3e2723;
+}
+
+.todo-item.low {
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  border: 1px solid #2979ff;
+}
+
+.actions button {
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.actions button:hover {
+  transform: scale(1.2);
+}
+
+.add-todo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-todo input,
+.add-todo select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+  background-color: #f9f9f9;
+}
+
+.add-todo button {
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.add-todo button:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(8px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
